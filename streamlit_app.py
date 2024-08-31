@@ -116,6 +116,6 @@ elif nav == "Check Balance":
         msg["From"] = "your_email_id@gmail.com"
         msg["To"] = email_id
         with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
-            smtp.login("your_email_id@gmail.com", "your_password")
+            smtp.login("adityagupta5436@gmail.com", "adityaloveayushi")
             smtp.send_message(msg)
         st.write("Balance sent to your email ID!")
