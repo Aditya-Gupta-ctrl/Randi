@@ -99,23 +99,4 @@ elif nav == "Withdraw":
         else:
             st.write("Insufficient balance!")
 
-# Create a page for checking the balance
-elif nav == "Check Balance":
-    st.write("Check balance")
-    account_number = st.text_input("Enter your account number")
-    email_id = st.text_input("Enter your email ID")
-    if st.button("Check Balance"):
-        # Retrieve the balance from the database
-        cursor.execute("SELECT balance FROM accounts WHERE account_number = ?", (account_number,))
-        balance = cursor.fetchone()[0]
-        st.write(f"Your balance is {balance}")
-        # Send a confirmation email
-        msg = EmailMessage()
-        msg.set_content(f"Your balance is {balance}.")
-        msg["Subject"] = "Balance Inquiry"
-        msg["From"] = "your_email_id@gmail.com"
-        msg["To"] = email_id
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
-            smtp.login("adityagupta5436@gmail.com", "adityaloveayushi")
-            smtp.send_message(msg)
-        st.write("Balance sent to your email ID!")
+
