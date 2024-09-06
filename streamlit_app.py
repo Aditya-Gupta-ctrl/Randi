@@ -10,4 +10,4 @@ sac.tabs([
     sac.TabsItem(label='C++', icon=''),
     sac.TabsItem(label='JAVA', icon=''),
     sac.TabsItem(label='disabled', disabled=True),
-], align='center', size='lg' , color='grape', use_container_width=True)
+], align='center', size='xl' , color='grape', use_container_width=True)
