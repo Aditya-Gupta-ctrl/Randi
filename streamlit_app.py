@@ -1,18 +1,29 @@
 import streamlit as st
 
-# Create a text input for the user to enter their code
-code_input = st.text_input("Enter your code:")
+# Create a tab bar
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["Tab 1", "Tab 2", "Tab 3", "Tab 4", "Tab 5"])
 
-# Create a code editor for the user to write their code
-code_editor = st.code_editor(code_input, language="python")
+# Tab 1
+with tab1:
+    st.header("Tab 1")
+    st.write("This is tab 1")
 
-# Create an output display to show the results of the code
-output_display = st.write("Output:")
+# Tab 2
+with tab2:
+    st.header("Tab 2")
+    st.write("This is tab 2")
 
-# Run the code and display the output
-if st.button("Run Code"):
-    try:
-        output = eval(code_input)
-        output_display.write(output)
-    except Exception as e:
-        output_display.write(f"Error: {e}")
+# Tab 3
+with tab3:
+    st.header("Tab 3")
+    st.write("This is tab 3")
+
+# Tab 4
+with tab4:
+    st.header("Tab 4")
+    st.write("This is tab 4")
+
+# Tab 5
+with tab5:
+    st.header("Tab 5")
+    st.write("This is tab 5")
