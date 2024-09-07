@@ -1,6 +1,7 @@
 import streamlit as st
 import streamlit_antd_components as sac
-import requests
+import os
+import openai
 
 # Set page config
 st.set_page_config(
