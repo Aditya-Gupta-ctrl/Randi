@@ -39,14 +39,21 @@ if selecteds == 1:
         response = requests.post(url, json={"prompt": prompt})
         return response.json()["response"]
     
-    prompt = st.chat_input("Enter a message:")
+    def display_chat_history():
+        for message in st.session_state.messages:
+            if message["role"] == "user":
+                st.write(f"You: {message['content']}")
+            elif message["role"] == "assistant":
+                st.write(f"Assistant: {message['content']}")
     
-    if prompt:
-        st.chat_message("user", prompt)
+    prompt = st.text_input("Enter a message:")
+    
+    if st.button("Send"):
+        st.session_state.messages.append({"role": "user", "content": prompt})
         response = get_response_from_blackbox(prompt)
-        st.chat_message("assistant", response)
         st.session_state.messages.append({"role": "assistant", "content": response})
-
+    
+    display_chat_history()
 
 
 
