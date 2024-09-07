@@ -43,7 +43,7 @@ if selecteds == 1:
     
         response = requests.post("https://api.openai.com/v1/completions", headers=headers, json=data)
         response_data = response.json()
-        return response_data["choices"][0]["text"].strip()   
+        return response_data["choices"][0]["text"].strip()
     
     
     def main():
