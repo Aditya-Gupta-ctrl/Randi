@@ -32,6 +32,9 @@ if selecteds == 2:
                 sac.MenuItem('@2', icon='', href=''),
             ]),
         ], size='lg', variant='left-bar', color='grape', open_all=True, return_index=True)
+    
+    if selected == 0:
+        st.header("Welcome to ML Model")
 
 
 #Menu Bar
