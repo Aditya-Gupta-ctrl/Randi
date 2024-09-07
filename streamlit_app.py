@@ -4,7 +4,7 @@ import streamlit_antd_components as sac
 
 # Set page config
 st.set_page_config(
-    page_title="VIT LearnHub",
+    page_title="lund Hub",
     page_icon=":book:",
     layout="wide",
 )
