@@ -84,6 +84,14 @@ if selecteds == 2:
         3. **Run Code:** To execute your code, save it as a .py file and run it from the command line or your IDE.
         """)
 
+        # Popular libraries
+        st.subheader("Popular Libraries")
+        st.write("- **NumPy:** For numerical computations and scientific computing.")
+        st.write("- **Pandas:** For data manipulation and analysis.")
+        st.write("- **Matplotlib:** For creating visualizations and plots.")
+        st.write("- **Scikit-learn:** For machine learning tasks.")
+        st.write("- **TensorFlow and PyTorch:** For deep learning.")
+
 
     if selected == 3:
         st.header("Python Data Type")
