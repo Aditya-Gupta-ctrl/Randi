@@ -25,7 +25,7 @@ selecteds = sac.tabs([
 if selecteds == 0:
     st.header("Welcome to Chik Dabak Dam Dam")
     st.subheader("Directly go the python for learning {others things are work in progress}")
-    st.footer("Backchodi maat kar lawde kaam chal raha hai na")
+    st.write("Backchodi maat kar lawde kaam chal raha hai na")
 
 #Menu Bar
 if selecteds == 2:
