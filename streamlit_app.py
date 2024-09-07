@@ -35,7 +35,7 @@ if selecteds == 2:
             sac.MenuItem('Cheatsheet', icon='table'),
             sac.MenuItem(type='divider'),
             sac.MenuItem('link', type='group', children=[
-                sac.MenuItem('@1', icon='', href=''),
+                sac.MenuItem('Download Python', icon='download', href='https://www.python.org/downloads/'),
                 sac.MenuItem('@2', icon='', href=''),
             ]),
         ], size='lg', variant='left-bar', color='grape', open_all=True, return_index=True)
