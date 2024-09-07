@@ -24,8 +24,7 @@ if selecteds == 2:
                 sac.MenuItem('conditional statement', icon=''),
                 sac.MenuItem('Freeze the Learning', icon=''),
             ]),
-            sac.MenuItem('disabled', disabled=True),
-            sac.MenuItem('About', icon=''),
+            sac.MenuItem('Cheatsheet', icon='table'),
             sac.MenuItem(type='divider'),
             sac.MenuItem('link', type='group', children=[
                 sac.MenuItem('@1', icon='', href=''),
