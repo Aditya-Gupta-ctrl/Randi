@@ -59,8 +59,6 @@ if selecteds == 1:
 	            ],
 	        ).choice[0].message.content
 		st.markdown(response)
-		
-	        response = st.write_stream(stream)
 	    st.session_state.messages.append({"role": "assistant", "content": response})
 	    display_chat_history()
 
