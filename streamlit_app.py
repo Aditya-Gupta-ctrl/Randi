@@ -37,11 +37,11 @@ if selecteds == 1:
     st.title("Chatbot")
     
     def get_response_from_blackbox(prompt):
-        url = "https://blackbox-model-api.p.rapidapi.com/api"  # Verify that this URL is correct
+        url = "https://blackbox.p.rapidapi.com/v1/1.1.1.1"  # Verify that this URL is correct
         api_key = "a3f21bb199mshff88d19a02d63cdp1888d1jsn997bbcdb85fa"
         headers = {
             "X-RapidAPI-Key": api_key,
-            "X-RapidAPI-Host": "blackbox-model-api.p.rapidapi.com"
+            "X-RapidAPI-Host": "blackbox.p.rapidapi.com"
         }
         try:
             response = requests.post(url, headers=headers, json={"prompt": prompt})
