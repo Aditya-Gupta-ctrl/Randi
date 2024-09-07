@@ -29,11 +29,10 @@ if selecteds == 0:
 
 #GPT Section
 if selecteds == 1:
-    st.Title("Chatbot")
-    st.subheader("here you can ask question to it")
-
+    if "messages" not in st.session_state:
+        st.session_state.messages = []
     
-    st.title("Chat with Blackbox")
+    st.title("Chatbot")
     
     def get_response_from_blackbox(prompt):
         url = "https://your-blackbox-model.com/api"
