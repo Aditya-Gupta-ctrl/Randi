@@ -34,7 +34,7 @@ if selecteds == 2:
         ], size='lg', variant='left-bar', color='grape', open_all=True, return_index=True)
     
     if selected == 0:
-        st.header("Welcome to ML Model")
+        st.header("Welcome to Python")
 
 
 #Menu Bar
