@@ -34,12 +34,12 @@ if selecteds == 2:
             sac.MenuItem('Introduction', icon='house-fill'),
             sac.MenuItem(type='divider'),
             sac.MenuItem('Basics', icon='box-fill', children=[
-                sac.MenuItem(''),
+                sac.MenuItem('First Program'),
                 sac.MenuItem('Data Types'),           
+                sac.MenuItem('Variable'),
                 sac.MenuItem('Operations'),
-                sac.MenuItem('conditional statement'),
+                sac.MenuItem('Control Flow'),
                 sac.MenuItem('Function'),
-                sac.MenuItem('Operations'),
                 sac.MenuItem('Operations'),
                 sac.MenuItem('Operations'),
                 sac.MenuItem('Operations'),
@@ -116,7 +116,7 @@ if selecteds == 2:
         st.write("- **TensorFlow and PyTorch:** For deep learning.")
 
 
-    if selected == 3:
+    if selected == 4:
         st.header("Python Data Type")
         st.write("Python data types offers, enabling you to manipulate and manage data with precision and flexibility. Additionally, we’ll delve into the dynamic world of data conversion with casting, and then move on to explore the versatile collections Python provides, including lists, tuples, sets, dictionaries, and arrays.")
 
