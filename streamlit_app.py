@@ -68,7 +68,7 @@ if selecteds == 2:
         st.image(image_url)
         
         # Key features
-        st.subheader("Key Features",tag=[sac.Tag('Tag1', color='green'))
+        st.subheader("Key Features",tag=[sac.Tag('Tag1', color='green')])
         st.write("- **Interpreted Language:** This implies that Python code is executed one line at a time, making it an interpreted language. Also, in comparison to other popular languages like C, C++, Java, etc., Python code does not require compilation, making it easier to debug. In fact, an immediate format called the Bytecode is created from Python's source code.")
         st.write("- **Cross-platform Language:** Python is compatible with many operating systems/ platforms, including Windows, macOS, Linux, etc. This feature allows Python code to be portable across platforms, further allowing programmers to write code once and run it indistinguishably on several platforms.")
         st.write("- **Free and Open Source:** The language is free to download and use. Users can download Python from the official website. In addition to that, the public can also see the source code since Python is open-source.")
