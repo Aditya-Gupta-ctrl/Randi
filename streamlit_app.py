@@ -9,7 +9,7 @@ selecteds = sac.tabs([
     sac.TabsItem(label='C', icon=''),
     sac.TabsItem(label='C++', icon=''),
     sac.TabsItem(label='JAVA', icon=''),
-], align='center', size='lg' , color='grape', use_container_width=True, return_index=True)
+], align='wide', size='lg' , color='grape', use_container_width=True, return_index=True)
 
 
 #Menu Bar
