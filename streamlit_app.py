@@ -29,14 +29,15 @@ if selecteds == 0:
 
 #GPT Section
 if selecteds == 1:
-   
+
+    
     if "messages" not in st.session_state:
         st.session_state.messages = []
     
     st.title("Chatbot")
     
     def get_response_from_blackbox(prompt):
-        url = "https://blackbox-model-api.p.rapidapi.com/api"
+        url = "https://blackbox-model-api.p.rapidapi.com/api"  # Verify that this URL is correct
         api_key = "a3f21bb199mshff88d19a02d63cdp1888d1jsn997bbcdb85fa"
         headers = {
             "X-RapidAPI-Key": api_key,
@@ -46,10 +47,13 @@ if selecteds == 1:
             response = requests.post(url, headers=headers, json={"prompt": prompt})
             response.raise_for_status()  # Raise an exception for 4xx or 5xx status codes
             return response.json()["response"]
+        except requests.HTTPError as e:
+            if e.response.status_code == 404:
+                return "Error: The API endpoint was not found. Please verify the URL."
+            else:
+                return f"Error: {e.response.status_code} {e.response.reason}"
         except requests.ConnectionError as e:
             return "Error: Unable to connect to the blackbox model's API endpoint."
-        except requests.HTTPError as e:
-            return f"Error: {e.response.status_code} {e.response.reason}"
         except Exception as e:
             return f"Error: {str(e)}"
     
@@ -68,7 +72,6 @@ if selecteds == 1:
         st.session_state.messages.append({"role": "assistant", "content": response})
     
     display_chat_history()
-
 
 
 #Python Tab Section
