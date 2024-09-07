@@ -33,7 +33,7 @@ if selecteds == 1:
 	
 	st.title("ChatGPT-like clone")
 	
-	client = OpenAI(api_key="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")
+	client = OpenAI(api_key="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")
 	
 	if "openai_model" not in st.session_state:
 	    st.session_state["openai_model"] = "gpt-3.5-turbo"
