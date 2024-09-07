@@ -67,6 +67,10 @@ if selecteds == 1:
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
 
+
+
+
+
 #Python Tab Section
 if selecteds == 2:
     with st.sidebar:
