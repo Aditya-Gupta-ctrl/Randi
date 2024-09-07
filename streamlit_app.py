@@ -27,12 +27,6 @@ if selecteds == 0:
         selected = sac.menu([
             sac.MenuItem('Introduction', icon='house-fill'),
             sac.MenuItem(type='divider'),
-            sac.MenuItem('Basics', icon='box-fill', children=[
-                sac.MenuItem('Data Types'),           
-                sac.MenuItem('Operations', icon='', description=''),
-                sac.MenuItem('conditional statement', icon=''),
-                sac.MenuItem('Freeze the Learning', icon=''),
-            ]),
             sac.MenuItem('Cheatsheet', icon='table'),
             sac.MenuItem(type='divider'),
             sac.MenuItem('link', type='group', children=[
