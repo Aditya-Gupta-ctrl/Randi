@@ -1,6 +1,14 @@
 import streamlit as st
 import streamlit_antd_components as sac
 
+
+# Set page config
+st.set_page_config(
+    page_title="VIT LearnHub",
+    page_icon=":book:",
+    layout="wide",
+)
+
 #Tab Menu
 selecteds = sac.tabs([
     sac.TabsItem(label='Home', tag=""),
