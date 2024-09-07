@@ -36,8 +36,16 @@ if selecteds == 1:
     
     def get_response_from_blackbox(prompt):
         url = "https://your-blackbox-model.com/api"
-        response = requests.post(url, json={"prompt": prompt})
-        return response.json()["response"]
+        try:
+            response = requests.post(url, json={"prompt": prompt})
+            response.raise_for_status()  # Raise an exception for 4xx or 5xx status codes
+            return response.json()["response"]
+        except requests.ConnectionError as e:
+            return "Error: Unable to connect to the blackbox model's API endpoint."
+        except requests.HTTPError as e:
+            return f"Error: {e.response.status_code} {e.response.reason}"
+        except Exception as e:
+            return f"Error: {str(e)}"
     
     def display_chat_history():
         for message in st.session_state.messages:
@@ -54,7 +62,6 @@ if selecteds == 1:
         st.session_state.messages.append({"role": "assistant", "content": response})
     
     display_chat_history()
-
 
 
 
