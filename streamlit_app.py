@@ -42,6 +42,47 @@ if selecteds == 2:
     
     if selected == 0:
         st.header("Welcome to Python")
+        # App title
+        st.title("Python Overview")
+        
+        # Introduction
+        st.markdown("""
+        Python is a high-level, general-purpose programming language known for its simplicity, readability, and versatility. It's widely used in various fields, including web development, data science, machine learning, and automation.
+        """)
+        
+        # Key features
+        st.subheader("Key Features")
+        st.write("- **Readability:** Python's syntax is clean and easy to understand.")
+        st.write("- **Versatility:** It can be used for a wide range of tasks.")
+        st.write("- **Large Community:** Python has a vast and active community.")
+        st.write("- **Cross-Platform Compatibility:** Python code can run on different operating systems.")
+        
+        # Basic concepts
+        st.subheader("Basic Concepts")
+        st.markdown("""
+        * **Variables:** Used to store data (e.g., numbers, text, lists).
+        * **Data Types:** Different types of data, such as integers, floats, strings, lists, tuples, dictionaries.
+        * **Operators:** Used to perform operations (e.g., arithmetic, comparison, logical).
+        * **Control Flow:** Statements that determine the order in which code is executed (e.g., if-else, loops).
+        * **Functions:** Reusable blocks of code that perform specific tasks.
+        * **Modules:** Files containing Python code that can be imported into other programs.
+        """)
+        
+        # Example code
+        st.subheader("Example")
+        code = """
+        # A simple Python program to print "Hello, World!"
+        print("Hello, World!")
+        """
+        st.code(code, language='python')
+        
+        # Getting started
+        st.subheader("Getting Started")
+        st.markdown("""
+        1. **Download and Install:** Visit the official Python website (python.org) and download the appropriate version for your operating system.
+        2. **Write Code:** Use a text editor or integrated development environment (IDE) to write your Python code.
+        3. **Run Code:** To execute your code, save it as a .py file and run it from the command line or your IDE.
+        """)
 
 
     if selected == 3:
