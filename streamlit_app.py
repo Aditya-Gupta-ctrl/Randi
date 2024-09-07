@@ -1,6 +1,6 @@
 import streamlit as st
 import streamlit_antd_components as sac
-
+import requests
 
 # Set page config
 st.set_page_config(
@@ -27,7 +27,38 @@ if selecteds == 0:
     st.subheader("Directly go the python for learning {others things are work in progress}")
     st.write("Backchodi maat kar lawde kaam chal raha hai na")
 
-#Menu Bar
+#ChatGPT Section
+if selecteds == 1:
+    # Replace with your deployed API key
+    api_key = "YOUR_API_KEY"
+    
+    def get_response(prompt):
+        headers = {
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {api_key}"
+        }
+        data = {
+            "prompt": prompt
+        }
+    
+        response = requests.post("https://api.openai.com/v1/completions", headers=headers, json=data)
+        response_data = response.json()
+        return response_data["choices"][0]["text"].strip()   
+    
+    
+    def main():
+        st.title("Gemini Coding Assistant")
+    
+        prompt = st.text_area("Enter your coding prompt:")
+    
+        if st.button("Generate Code"):
+            response = get_response(prompt)
+            st.success(response)
+    
+    if __name__ == "__main__":
+        main()
+
+#Python Tab Section
 if selecteds == 2:
     with st.sidebar:
         selected = sac.menu([
@@ -121,7 +152,18 @@ if selecteds == 2:
         st.write("Python data types offers, enabling you to manipulate and manage data with precision and flexibility. Additionally, we’ll delve into the dynamic world of data conversion with casting, and then move on to explore the versatile collections Python provides, including lists, tuples, sets, dictionaries, and arrays.")
 
 
-#Menu Bar
+
+
+
+
+
+
+
+
+
+
+
+#C Tab Section
 if selecteds == 3:
     with st.sidebar:
         selected = sac.menu([
