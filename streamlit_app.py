@@ -4,7 +4,7 @@ import streamlit_antd_components as sac
 
 # Set page config
 st.set_page_config(
-    page_title="lund Hub",
+    page_title="chik dabak dam dam",
     page_icon=":book:",
     layout="wide",
 )
@@ -21,20 +21,9 @@ selecteds = sac.tabs([
 
 
 
-#Menu Bar
+#Home Section
 if selecteds == 0:
-    with st.sidebar: 
-        selected = sac.menu([
-            sac.MenuItem('Introduction', icon='house-fill'),
-            sac.MenuItem(type='divider'),
-            sac.MenuItem('link', type='group', children=[
-                sac.MenuItem('Instagram', icon='instagram', description='Latest Version', href='https://www.python.org/downloads/'),
-                sac.MenuItem('GitHub', icon='github', href='https://code.visualstudio.com/download'),
-            ]),
-        ], size='lg', variant='left-bar', color='grape', open_all=True, return_index=True)
-    
-    if selected == 0:
-        st.header("Welcome to ")
+    st.header("Welcome to Chik Dabak Dam Dam")
 
 
 #Menu Bar
