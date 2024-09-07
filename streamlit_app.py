@@ -1,6 +1,7 @@
 import streamlit as st
 import streamlit_antd_components as sac
-import requests
+from openai import OpenAI
+
 
 # Set page config
 st.set_page_config(
@@ -29,48 +30,38 @@ if selecteds == 0:
 
 #GPT Section
 if selecteds == 1:
-
-    
-    if "messages" not in st.session_state:
-        st.session_state.messages = []
-    
-    st.title("Chatbot")
-    
-    def get_response_from_blackbox(prompt):
-        url = "https://blackbox.p.rapidapi.com/v1/1.1.1.1"  # Verify that this URL is correct
-        headers = {
-	        "x-rapidapi-key": "a3f21bb199mshff88d19a02d63cdp1888d1jsn997bbcdb85fa",
-	        "x-rapidapi-host": "blackbox.p.rapidapi.com"
-        }
-        try:
-            response = requests.post(url, headers=headers, json={"prompt": prompt})
-            response.raise_for_status()  # Raise an exception for 4xx or 5xx status codes
-            return response.json()["response"]
-        except requests.HTTPError as e:
-            if e.response.status_code == 404:
-                return "Error: The API endpoint was not found. Please verify the URL."
-            else:
-                return f"Error: {e.response.status_code} {e.response.reason}"
-        except requests.ConnectionError as e:
-            return "Error: Unable to connect to the blackbox model's API endpoint."
-        except Exception as e:
-            return f"Error: {str(e)}"
-    
-    def display_chat_history():
-        for message in st.session_state.messages:
-            if message["role"] == "user":
-                st.write(f"You: {message['content']}")
-            elif message["role"] == "assistant":
-                st.write(f"Assistant: {message['content']}")
-    
-    prompt = st.text_input("Enter a message:")
-    
-    if st.button("Send"):
-        st.session_state.messages.append({"role": "user", "content": prompt})
-        response = get_response_from_blackbox(prompt)
-        st.session_state.messages.append({"role": "assistant", "content": response})
-    
-    display_chat_history()
+	
+	st.title("ChatGPT-like clone")
+	
+	client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+	
+	if "openai_model" not in st.session_state:
+	    st.session_state["openai_model"] = "gpt-3.5-turbo"
+	
+	if "messages" not in st.session_state:
+	    st.session_state.messages = []
+	
+	for message in st.session_state.messages:
+	    with st.chat_message(message["role"]):
+	        st.markdown(message["content"])
+	
+	if prompt := st.chat_input("What is up?"):
+	    st.session_state.messages.append({"role": "user", "content": prompt})
+	    with st.chat_message("user"):
+	        st.markdown(prompt)
+	
+	    with st.chat_message("assistant"):
+	        stream = client.chat.completions.create(
+	            model=st.session_state["openai_model"],
+	            messages=[
+	                {"role": m["role"], "content": m["content"]}
+	                for m in st.session_state.messages
+	            ],
+	            stream=True,
+	        )
+	        response = st.write_stream(stream)
+	    st.session_state.messages.append({"role": "assistant", "content": response})
+	    display_chat_history()
 
 
 #Python Tab Section
