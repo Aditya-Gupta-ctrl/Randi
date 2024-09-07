@@ -27,8 +27,6 @@ if selecteds == 0:
         selected = sac.menu([
             sac.MenuItem('Introduction', icon='house-fill'),
             sac.MenuItem(type='divider'),
-            sac.MenuItem('Cheatsheet', icon='table'),
-            sac.MenuItem(type='divider'),
             sac.MenuItem('link', type='group', children=[
                 sac.MenuItem('Instagram', icon='instagram', description='Latest Version', href='https://www.python.org/downloads/'),
                 sac.MenuItem('GitHub', icon='github', href='https://code.visualstudio.com/download'),
