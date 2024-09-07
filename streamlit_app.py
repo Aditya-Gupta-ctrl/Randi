@@ -36,6 +36,11 @@ if selecteds == 2:
         st.header("Welcome to Python")
 
 
+    if selected == 3:
+        st.header("Python Data Type")
+        st.write("Python data types offers, enabling you to manipulate and manage data with precision and flexibility. Additionally, we’ll delve into the dynamic world of data conversion with casting, and then move on to explore the versatile collections Python provides, including lists, tuples, sets, dictionaries, and arrays.")
+
+
 #Menu Bar
 if selecteds == 3:
     with st.sidebar:
