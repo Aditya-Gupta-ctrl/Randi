@@ -30,7 +30,7 @@ if selecteds == 0:
 #ChatGPT Section
 if selecteds == 1:
     # Replace with your deployed API key
-    api_key = "YOUR_API_KEY"
+    api_key = "AIzaSyDyTfelV0YLUl5xfehFo1qh_USUq4BCGbI"
     
     def get_response(prompt):
         headers = {
