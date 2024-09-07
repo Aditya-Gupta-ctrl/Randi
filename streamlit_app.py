@@ -31,7 +31,8 @@ if selecteds == 0:
 
 #GPT Section
 if selecteds == 1:
-
+    st.Title("Chatbot")
+    st.subheader("here you can ask question to it")
 
 
 
