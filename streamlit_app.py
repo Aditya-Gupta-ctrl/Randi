@@ -1,7 +1,6 @@
 import streamlit as st
 import streamlit_antd_components as sac
-import os
-import openai
+import requests
 
 # Set page config
 st.set_page_config(
@@ -33,6 +32,22 @@ if selecteds == 0:
 if selecteds == 1:
     st.Title("Chatbot")
     st.subheader("here you can ask question to it")
+
+    
+    st.title("Chat with Blackbox")
+    
+    def get_response_from_blackbox(prompt):
+        url = "https://your-blackbox-model.com/api"
+        response = requests.post(url, json={"prompt": prompt})
+        return response.json()["response"]
+    
+    prompt = st.chat_input("Enter a message:")
+    
+    if prompt:
+        st.chat_message("user", prompt)
+        response = get_response_from_blackbox(prompt)
+        st.chat_message("assistant", response)
+        st.session_state.messages.append({"role": "assistant", "content": response})
 
 
 
