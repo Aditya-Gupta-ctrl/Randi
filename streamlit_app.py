@@ -33,7 +33,7 @@ if selecteds == 1:
 	
 	st.title("ChatGPT-like clone")
 	
-	client = OpenAI(api_key="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")
+	client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 	
 	if "openai_model" not in st.session_state:
 	    st.session_state["openai_model"] = "gpt-3.5-turbo"
@@ -51,20 +51,16 @@ if selecteds == 1:
 	        st.markdown(prompt)
 	
 	    with st.chat_message("assistant"):
-	        try:
-	            response = client.chat.completions.create(
-	                model=st.session_state["openai_model"],
-	                messages=[
-	                    {"role": m["role"], "content": m["content"]}
-	                    for m in st.session_state.messages
-	                ]
-	            ).choices[0].message.content
-	            st.markdown(response)
-	        except Exception as e:
-	            st.error(f"Error: {e}")
+	        stream = client.chat.completions.create(
+	            model=st.session_state["openai_model"],
+	            messages=[
+	                {"role": m["role"], "content": m["content"]}
+	                for m in st.session_state.messages
+	            ],
+	            stream=True,
+	        )
+	        response = st.write_stream(stream)
 	    st.session_state.messages.append({"role": "assistant", "content": response})
-	    display_chat_history()
-
 
 
 
