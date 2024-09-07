@@ -51,17 +51,19 @@ if selecteds == 1:
 	        st.markdown(prompt)
 	
 	    with st.chat_message("assistant"):
-	        response = client.chat.completions.create(
-	            model=st.session_state["openai_model"],
-	            messages=[
-	                {"role": m["role"], "content": m["content"]}
-	                for m in st.session_state.messages
-	            ]
-	        ).choices[0].message.content
-	        st.markdown(response)
+	        try:
+	            response = client.chat.completions.create(
+	                model=st.session_state["openai_model"],
+	                messages=[
+	                    {"role": m["role"], "content": m["content"]}
+	                    for m in st.session_state.messages
+	                ]
+	            ).choices[0].message.content
+	            st.markdown(response)
+	        except Exception as e:
+	            st.error(f"Error: {e}")
 	    st.session_state.messages.append({"role": "assistant", "content": response})
 	    display_chat_history()
-
 
 
 
