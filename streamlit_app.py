@@ -31,8 +31,7 @@ if selecteds == 0:
 #ChatGPT Section
 if selecteds == 1:
     # Set up OpenAI API key
-    openai .api_key = st.secrets["sk-ZXGmPbZQADZdKsvSOMU9sdY7OJHoRQ6LguMupZLflrT3BlbkFJSqnEJSgrn0DCIuDNGKjfCAVONBKA_yVFKFD2qx4UoA"]
-    
+    openai.api_key = st.secrets["OPENAI_API_KEY"]
     # Initialize chat history
     if "messages" not in st.session_state:
         st.session_state.messages = []
