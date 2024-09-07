@@ -36,7 +36,7 @@ if selecteds == 2:
             sac.MenuItem(type='divider'),
             sac.MenuItem('link', type='group', children=[
                 sac.MenuItem('Download Python', icon='download', description='Latest Version', href='https://www.python.org/downloads/'),
-                sac.MenuItem('Download VS CodeEditor', icon='terminal', href='https://code.visualstudio.com/download'),
+                sac.MenuItem('Download VS Code', icon='terminal', href='https://code.visualstudio.com/download'),
             ]),
         ], size='lg', variant='left-bar', color='grape', open_all=True, return_index=True)
     
