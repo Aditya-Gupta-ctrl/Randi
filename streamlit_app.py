@@ -56,12 +56,11 @@ if selecteds == 1:
 	            messages=[
 	                {"role": m["role"], "content": m["content"]}
 	                for m in st.session_state.messages
-	            ],
-	        ).choice[0].message.content
-		st.markdown(response)
+	            ]
+	        ).choices[0].message.content
+	        st.markdown(response)
 	    st.session_state.messages.append({"role": "assistant", "content": response})
 	    display_chat_history()
-
 
 
 
