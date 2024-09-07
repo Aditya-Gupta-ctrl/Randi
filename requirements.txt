@@ -2,3 +2,4 @@ streamlit
 streamlit_antd_components
 openai
 toml
+Openai
