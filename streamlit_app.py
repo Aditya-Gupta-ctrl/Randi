@@ -52,7 +52,7 @@ if selecteds == 2:
         - Python, known for its simplicity and versatility, is one of the most popular programming languages today. From developing dynamic web applications to driving machine learning algorithms and handling complex data analytics. Most of the tech giants like Google, Amazon, Facebook, and Instagram rely on Python to build and maintain their cutting-edge technology solutions.
         """)
 
-        image_url = "https://github.com/Aditya-Gupta-ctrl/Randi/blob/master/pyhistorytimeline-removebg-preview.png"
+        image_url = "https://d8it4huxumps7.cloudfront.net/uploads/images/65608f420c159_what_is_python_1.jpg?d=2000x2000"
         st.image(image_url)
         
         # Key features
