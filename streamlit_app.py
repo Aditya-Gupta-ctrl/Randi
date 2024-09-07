@@ -16,7 +16,7 @@ selecteds = sac.tabs([
     sac.TabsItem(label='Python', icon=''),
     sac.TabsItem(label='C', icon=''),
     sac.TabsItem(label='C++', icon=''),
-    sac.TabsItem(label='JAVA', icon=''),
+    sac.TabsItem(label='Java', icon=''),
 ], align='wide', size='lg' , color='grape', use_container_width=True, return_index=True)
 
 
