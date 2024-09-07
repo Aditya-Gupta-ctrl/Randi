@@ -85,13 +85,6 @@ if selecteds == 2:
         * **Modules:** Files containing Python code that can be imported into other programs.
         """)
         
-        # Example code
-        st.subheader("Example")
-        code = """
-        # A simple Python program to print "Hello, World!"
-        print("Hello, World!")
-        """
-        st.code(code, language='python')
         
         # Getting started
         st.subheader("Getting Started")
@@ -100,6 +93,14 @@ if selecteds == 2:
         2. **Write Code:** Use a text editor or integrated development environment (IDE) to write your Python code.
         3. **Run Code:** To execute your code, save it as a .py file and run it from the command line or your IDE.
         """)
+
+        # Example code
+        st.subheader("Example")
+        code = """
+        # A simple Python program to print "Hello, World!"
+        print("Hello, World!")
+        """
+        st.code(code, language='python')
 
         # Popular libraries
         st.subheader("Popular Libraries")
