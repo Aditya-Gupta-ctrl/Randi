@@ -20,6 +20,31 @@ selecteds = sac.tabs([
 ], align='wide', size='lg' , color='grape', use_container_width=True, return_index=True)
 
 
+
+#Menu Bar
+if selecteds == 0:
+    with st.sidebar:
+        selected = sac.menu([
+            sac.MenuItem('Introduction', icon='house-fill'),
+            sac.MenuItem(type='divider'),
+            sac.MenuItem('Basics', icon='box-fill', children=[
+                sac.MenuItem('Data Types'),           
+                sac.MenuItem('Operations', icon='', description=''),
+                sac.MenuItem('conditional statement', icon=''),
+                sac.MenuItem('Freeze the Learning', icon=''),
+            ]),
+            sac.MenuItem('Cheatsheet', icon='table'),
+            sac.MenuItem(type='divider'),
+            sac.MenuItem('link', type='group', children=[
+                sac.MenuItem('Instagram', icon='instagram', description='Latest Version', href='https://www.python.org/downloads/'),
+                sac.MenuItem('GitHub', icon='github', href='https://code.visualstudio.com/download'),
+            ]),
+        ], size='lg', variant='left-bar', color='grape', return_index=True)
+    
+    if selected == 0:
+        st.header("Welcome to ")
+
+
 #Menu Bar
 if selecteds == 2:
     with st.sidebar:
