@@ -29,43 +29,9 @@ if selecteds == 0:
     st.write("Backchodi maat kar lawde kaam chal raha hai na")
     print(st.secrets)
 
-#ChatGPT Section
+#GPT Section
 if selecteds == 1:
-    # Set up OpenAI API key
-    openai.api_key = st.secrets["OPENAI_API_KEY"]
-    # Initialize chat history
-    if "messages" not in st.session_state:
-        st.session_state.messages = []
-    
-    # Create a chat input box with rounded corners
-    st.markdown("""
-    <style>
-        .st-ae {
-            border-radius: 10px;
-            border: 1px solid #ccc;
-            padding: 10px;
-        }
-    </style>
-    """, unsafe_allow_html=True)
-    
-    # Create a chat input box
-    chat_input = st.text_input("Type your message...", key="chat_input")
-    
-    # Send the message to OpenAI's ChatGPT API
-    if chat_input:
-        response = openai.Completion.create(
-            model="gpt-3.5-turbo",
-            prompt=chat_input,
-            max_tokens=1024,
-            temperature=0.5,
-        )
-        st.session_state.messages.append({"role": "user", "content": chat_input})
-        st.session_state.messages.append({"role": "assistant", "content": response.choices[0].text})
-    
-    # Display the chat history
-    for message in st.session_state.messages:
-        with st.chat_message(message["role"]):
-            st.markdown(message["content"])
+
 
 
 
