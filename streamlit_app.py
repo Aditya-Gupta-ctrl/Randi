@@ -29,15 +29,21 @@ if selecteds == 0:
 
 #GPT Section
 if selecteds == 1:
+   
     if "messages" not in st.session_state:
         st.session_state.messages = []
     
     st.title("Chatbot")
     
     def get_response_from_blackbox(prompt):
-        url = "https://your-blackbox-model.com/api"
+        url = "https://blackbox-model-api.p.rapidapi.com/api"
+        api_key = "a3f21bb199mshff88d19a02d63cdp1888d1jsn997bbcdb85fa"
+        headers = {
+            "X-RapidAPI-Key": api_key,
+            "X-RapidAPI-Host": "blackbox-model-api.p.rapidapi.com"
+        }
         try:
-            response = requests.post(url, json={"prompt": prompt})
+            response = requests.post(url, headers=headers, json={"prompt": prompt})
             response.raise_for_status()  # Raise an exception for 4xx or 5xx status codes
             return response.json()["response"]
         except requests.ConnectionError as e:
