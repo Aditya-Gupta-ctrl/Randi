@@ -47,9 +47,9 @@ if selecteds == 2:
         
         # Introduction
         st.markdown("""
-        Python is a high-level, general-purpose programming language known for its simplicity, readability, and versatility. It's widely used in various fields, including web development, data science, machine learning, and automation.
-        Python, known for its simplicity and versatility, is one of the most popular programming languages today. From developing dynamic web applications to driving machine learning algorithms and handling complex data analytics. Most of the tech giants like Google, Amazon, Facebook, and Instagram rely on Python to build and maintain their cutting-edge technology solutions.
-        Now, whether you’re a beginner looking to write your first Python program or an experienced developer exploring advanced Python features, this Python tutorial is tailored to guide you through every step of your Python journey.
+        - Python is a high-level, general-purpose programming language known for its simplicity, readability, and versatility. It's widely used in various fields, including web development, data science, machine learning, and automation.
+        - Python, known for its simplicity and versatility, is one of the most popular programming languages today. From developing dynamic web applications to driving machine learning algorithms and handling complex data analytics. Most of the tech giants like Google, Amazon, Facebook, and Instagram rely on Python to build and maintain their cutting-edge technology solutions.
+        - Now, whether you’re a beginner looking to write your first Python program or an experienced developer exploring advanced Python features, this Python tutorial is tailored to guide you through every step of your Python journey.
         
         """)
         
