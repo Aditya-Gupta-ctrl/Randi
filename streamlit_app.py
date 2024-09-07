@@ -30,34 +30,42 @@ if selecteds == 0:
 
 #ChatGPT Section
 if selecteds == 1:
-    # Replace with your deployed API key
-    api_key = "AIzaSyDyTfelV0YLUl5xfehFo1qh_USUq4BCGbI"
+    # Set up OpenAI API key
+    openai .api_key = st.secrets["OPENAI_API_KEY"]
     
-    def get_response(prompt):
-        headers = {
-            "Content-Type": "application/json",
-            "Authorization": f"Bearer {api_key}"
+    # Initialize chat history
+    if "messages" not in st.session_state:
+        st.session_state.messages = []
+    
+    # Create a chat input box with rounded corners
+    st.markdown("""
+    <style>
+        .st-ae {
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            padding: 10px;
         }
-        data = {
-            "prompt": prompt
-        }
+    </style>
+    """, unsafe_allow_html=True)
     
-        response = requests.post("https://api.openai.com/v1/completions", headers=headers, json=data)
-        response_data = response.json()
-        return response_data["choices"][0]["text"].strip()
+    # Create a chat input box
+    chat_input = st.text_input("Type your message...", key="chat_input")
     
+    # Send the message to OpenAI's ChatGPT API
+    if chat_input:
+        response = openai.Completion.create(
+            model="gpt-3.5-turbo",
+            prompt=chat_input,
+            max_tokens=1024,
+            temperature=0.5,
+        )
+        st.session_state.messages.append({"role": "user", "content": chat_input})
+        st.session_state.messages.append({"role": "assistant", "content": response.choices[0].text})
     
-    def main():
-        st.title("Gemini Coding Assistant")
-    
-        prompt = st.text_area("Enter your coding prompt:")
-    
-        if st.button("Generate Code"):
-            response = get_response(prompt)
-            st.success(response)
-    
-    if __name__ == "__main__":
-        main()
+    # Display the chat history
+    for message in st.session_state.messages:
+        with st.chat_message(message["role"]):
+            st.markdown(message["content"])
 
 #Python Tab Section
 if selecteds == 2:
