@@ -15,24 +15,25 @@ selecteds = sac.tabs([
 
 
 #Menu Bar
-with st.sidebar:
-    selected = sac.menu([
-        sac.MenuItem('Introduction', icon='house-fill'),
-        sac.MenuItem(type='divider'),
-        sac.MenuItem('products', icon='box-fill', children=[
-            sac.MenuItem('Data Ingestion'),           
-            sac.MenuItem('Data Transformation', icon='', description=''),
-            sac.MenuItem('Auto Train ML Model', icon=''),
-            sac.MenuItem('Freeze the Learning', icon=''),
-        ]),
-        sac.MenuItem('disabled', disabled=True),
-        sac.MenuItem('About', icon=''),
-        sac.MenuItem(type='divider'),
-        sac.MenuItem('link', type='group', children=[
-            sac.MenuItem('@1', icon='', href=''),
-            sac.MenuItem('@2', icon='', href=''),
-        ]),
-    ], size='lg', variant='left-bar', color='grape', open_all=True, return_index=True)
+if selecteds == 1:
+    with st.sidebar:
+        selected = sac.menu([
+            sac.MenuItem('Introduction', icon='house-fill'),
+            sac.MenuItem(type='divider'),
+            sac.MenuItem('products', icon='box-fill', children=[
+                sac.MenuItem('Data Ingestion'),           
+                sac.MenuItem('Data Transformation', icon='', description=''),
+                sac.MenuItem('Auto Train ML Model', icon=''),
+                sac.MenuItem('Freeze the Learning', icon=''),
+            ]),
+            sac.MenuItem('disabled', disabled=True),
+            sac.MenuItem('About', icon=''),
+            sac.MenuItem(type='divider'),
+            sac.MenuItem('link', type='group', children=[
+                sac.MenuItem('@1', icon='', href=''),
+                sac.MenuItem('@2', icon='', href=''),
+            ]),
+        ], size='lg', variant='left-bar', color='grape', open_all=True, return_index=True)
 
 
 #Home bar
