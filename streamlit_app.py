@@ -1,5 +1,4 @@
 import streamlit as st
-
 import streamlit_antd_components as sac
 
 #Tab Menu
@@ -20,10 +19,10 @@ if selecteds == 1:
         selected = sac.menu([
             sac.MenuItem('Introduction', icon='house-fill'),
             sac.MenuItem(type='divider'),
-            sac.MenuItem('products', icon='box-fill', children=[
-                sac.MenuItem('Data Ingestion'),           
-                sac.MenuItem('Data Transformation', icon='', description=''),
-                sac.MenuItem('Auto Train ML Model', icon=''),
+            sac.MenuItem('Basics', icon='box-fill', children=[
+                sac.MenuItem('Data Types'),           
+                sac.MenuItem('Operations', icon='', description=''),
+                sac.MenuItem('conditional statement', icon=''),
                 sac.MenuItem('Freeze the Learning', icon=''),
             ]),
             sac.MenuItem('disabled', disabled=True),
@@ -34,8 +33,3 @@ if selecteds == 1:
                 sac.MenuItem('@2', icon='', href=''),
             ]),
         ], size='lg', variant='left-bar', color='grape', open_all=True, return_index=True)
-
-
-#Home bar
-if selected == 0:
-    st.header("Welcome to ML Model")
