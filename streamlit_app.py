@@ -118,7 +118,6 @@ if selecteds == 1:
 
 
 
-
 	if selected == 3:
 		st.markdown("""
     	<div style="border: 1px solid #b8b8b8; border-radius: 10px; padding: 10px;">
