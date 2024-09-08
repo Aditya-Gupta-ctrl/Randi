@@ -119,7 +119,7 @@ if selecteds == 1:
 				<h4>First Python Program to Learn Python Programming</h4>
 				<p>There are two ways you can execute your Python program:</p>
 				<p>1. First, we write a program in a file and run it one time.</p>
-			    <p>2. 
+			    <p>2. Second, run a code line by line.</p>
 			</div>
 			""", unsafe_allow_html=True)
 			
