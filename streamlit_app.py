@@ -28,9 +28,6 @@ if selecteds == 0:
     st.subheader("Directly go the python for learning {others things are work in progress}")
     st.write("Backchodi maat kar lawde kaam chal raha hai na")
 
-#GPT Section
-if selecteds == 5:
-	st.header("ythe chatbot key is in working")
 
 
 
@@ -145,83 +142,4 @@ if selecteds == 1:
 
 	
 	
-    if selected == 4:
-        st.header("Python Data Type")
-        st.write("Python data types offers, enabling you to manipulate and manage data with precision and flexibility. Additionally, we’ll delve into the dynamic world of data conversion with casting, and then move on to explore the versatile collections Python provides, including lists, tuples, sets, dictionaries, and arrays.")
 
-
-
-
-
-
-
-
-
-
-
-
-
-#C Tab Section
-if selecteds == 2:
-    with st.sidebar:
-        selected = sac.menu([
-            sac.MenuItem('Introduction', icon='house-fill'),
-            sac.MenuItem(type='divider'),
-            sac.MenuItem('Basics', icon='box-fill', children=[
-                sac.MenuItem('Data Types'),           
-                sac.MenuItem('Operations', icon='', description=''),
-                sac.MenuItem('conditional statement', icon=''),
-                sac.MenuItem('Freeze the Learning', icon=''),
-            ]),
-            sac.MenuItem('disabled', disabled=True),
-            sac.MenuItem('About', icon=''),
-            sac.MenuItem(type='divider'),
-            sac.MenuItem('link', type='group', children=[
-                sac.MenuItem('@1', icon='', href=''),
-                sac.MenuItem('@2', icon='', href=''),
-            ]),
-        ], size='lg', variant='left-bar', color='grape', open_all=True, return_index=True)
-
-
-#C++ tab Bar
-if selecteds == 3:
-    with st.sidebar:
-        selected = sac.menu([
-            sac.MenuItem('Introduction', icon='house-fill'),
-            sac.MenuItem(type='divider'),
-            sac.MenuItem('Basics', icon='box-fill', children=[
-                sac.MenuItem('Data Types'),           
-                sac.MenuItem('Operations', icon='', description=''),
-                sac.MenuItem('conditional statement', icon=''),
-                sac.MenuItem('Freeze the Learning', icon=''),
-            ]),
-            sac.MenuItem('disabled', disabled=True),
-            sac.MenuItem('About', icon=''),
-            sac.MenuItem(type='divider'),
-            sac.MenuItem('link', type='group', children=[
-                sac.MenuItem('@1', icon='', href=''),
-                sac.MenuItem('@2', icon='', href=''),
-            ]),
-        ], size='lg', variant='left-bar', color='grape', open_all=True, return_index=True)
-
-
-#java tab Bar
-if selecteds == 4:
-    with st.sidebar:
-        selected = sac.menu([
-            sac.MenuItem('Introduction', icon='house-fill'),
-            sac.MenuItem(type='divider'),
-            sac.MenuItem('Basics', icon='box-fill', children=[
-                sac.MenuItem('Data Types'),           
-                sac.MenuItem('Operations', icon='', description=''),
-                sac.MenuItem('conditional statement', icon=''),
-                sac.MenuItem('Freeze the Learning', icon=''),
-            ]),
-            sac.MenuItem('disabled', disabled=True),
-            sac.MenuItem('About', icon=''),
-            sac.MenuItem(type='divider'),
-            sac.MenuItem('link', type='group', children=[
-                sac.MenuItem('@1', icon='', href=''),
-                sac.MenuItem('@2', icon='', href=''),
-            ]),
-        ], size='lg', variant='left-bar', color='grape', open_all=True, return_index=True)
