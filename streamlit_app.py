@@ -12,8 +12,7 @@ st.set_page_config(
 
 #Tab Menu
 selecteds = sac.tabs([
-    sac.TabsItem(label='Home', tag=""),
-    
+    sac.TabsItem(label='Home', tag=""),    
     sac.TabsItem(label='Python', icon=''),
     sac.TabsItem(label='C', icon=''),
     sac.TabsItem(label='C++', icon=''),
