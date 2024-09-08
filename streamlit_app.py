@@ -124,13 +124,7 @@ if selecteds == 1:
 			""", unsafe_allow_html=True)
 			
 			
-		# Example code
-		st.subheader("Example")
-		code = """
-		# A simple Python program to print "Hello, World!"
-		print("Hello, World!")
-		"""
-		st.code(code, language='python')
+
 
 
 
