@@ -108,14 +108,6 @@ if selecteds == 1:
         3. **Run Code:** To execute your code, save it as a .py file and run it from the command line or your IDE.
         """)
 
-        # Example code
-        st.subheader("Example")
-        code = """
-        # A simple Python program to print "Hello, World!"
-        print("Hello, World!")
-        """
-        st.code(code, language='python')
-
         # Popular libraries
         st.subheader("Popular Libraries")
         st.write("- **NumPy:** For numerical computations and scientific computing.")
@@ -127,7 +119,43 @@ if selecteds == 1:
 
 
 
+	if selected == 3:
+		st.markdown("""
+	    <style>
+	    .box {
+	        border: 1px solid #B8B8B8;
+	        border-radius: 10px;
+	        padding: 10px;
+	        margin-bottom: 20px;
+	    }
+	    </style>
+	    """, unsafe_allow_html=True)
 
+		st.markdown("""
+    	<div class="box">
+	 	<h4>First Python Program to Learn Python Programming</h4>
+    	<p>This is a machine learning model that allows you to upload your dataset, select the target column, and train a simple linear regression model. The model will then make predictions on the uploaded data.</p>
+    	</div>
+    	""", unsafe_allow_html=True)
+
+
+        # Example code
+        st.subheader("Example")
+        code = """
+        # A simple Python program to print "Hello, World!"
+        print("Hello, World!")
+        """
+        st.code(code, language='python')
+
+
+
+
+
+
+
+
+
+	
 	
     if selected == 4:
         st.header("Python Data Type")
