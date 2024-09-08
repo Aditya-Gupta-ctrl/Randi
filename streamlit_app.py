@@ -142,6 +142,28 @@ if selecteds == 1:
 
 
 #C Tab Section
+if selecteds == 2:
+    with st.sidebar:
+        selected = sac.menu([
+            sac.MenuItem('Introduction', icon='house-fill'),
+            sac.MenuItem(type='divider'),
+            sac.MenuItem('Basics', icon='box-fill', children=[
+                sac.MenuItem('Data Types'),           
+                sac.MenuItem('Operations', icon='', description=''),
+                sac.MenuItem('conditional statement', icon=''),
+                sac.MenuItem('Freeze the Learning', icon=''),
+            ]),
+            sac.MenuItem('disabled', disabled=True),
+            sac.MenuItem('About', icon=''),
+            sac.MenuItem(type='divider'),
+            sac.MenuItem('link', type='group', children=[
+                sac.MenuItem('@1', icon='', href=''),
+                sac.MenuItem('@2', icon='', href=''),
+            ]),
+        ], size='lg', variant='left-bar', color='grape', open_all=True, return_index=True)
+
+
+#C++ tab Bar
 if selecteds == 3:
     with st.sidebar:
         selected = sac.menu([
@@ -163,30 +185,8 @@ if selecteds == 3:
         ], size='lg', variant='left-bar', color='grape', open_all=True, return_index=True)
 
 
-#Menu Bar
+#java tab Bar
 if selecteds == 4:
-    with st.sidebar:
-        selected = sac.menu([
-            sac.MenuItem('Introduction', icon='house-fill'),
-            sac.MenuItem(type='divider'),
-            sac.MenuItem('Basics', icon='box-fill', children=[
-                sac.MenuItem('Data Types'),           
-                sac.MenuItem('Operations', icon='', description=''),
-                sac.MenuItem('conditional statement', icon=''),
-                sac.MenuItem('Freeze the Learning', icon=''),
-            ]),
-            sac.MenuItem('disabled', disabled=True),
-            sac.MenuItem('About', icon=''),
-            sac.MenuItem(type='divider'),
-            sac.MenuItem('link', type='group', children=[
-                sac.MenuItem('@1', icon='', href=''),
-                sac.MenuItem('@2', icon='', href=''),
-            ]),
-        ], size='lg', variant='left-bar', color='grape', open_all=True, return_index=True)
-
-
-#Menu Bar
-if selecteds == 5:
     with st.sidebar:
         selected = sac.menu([
             sac.MenuItem('Introduction', icon='house-fill'),
