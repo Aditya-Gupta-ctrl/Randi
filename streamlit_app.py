@@ -30,7 +30,7 @@ if selecteds == 0:
     st.write("Backchodi maat kar lawde kaam chal raha hai na")
 
 #GPT Section
-if selecteds == 6:
+if selecteds == 5:
 	st.header("ythe chatbot key is in working")
 
 
