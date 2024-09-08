@@ -13,11 +13,12 @@ st.set_page_config(
 #Tab Menu
 selecteds = sac.tabs([
     sac.TabsItem(label='Home', tag=""),
-    sac.TabsItem(icon='google',tag="GPT"),
+    
     sac.TabsItem(label='Python', icon=''),
     sac.TabsItem(label='C', icon=''),
     sac.TabsItem(label='C++', icon=''),
     sac.TabsItem(label='Java', icon=''),
+	sac.TabsItem(icon='google',tag="GPT"),
 ], align='wide', size='lg' , color='grape', use_container_width=True, return_index=True)
 
 
@@ -29,28 +30,14 @@ if selecteds == 0:
     st.write("Backchodi maat kar lawde kaam chal raha hai na")
 
 #GPT Section
-if selecteds == 1:
-	
-	# Set up the OpenAI LLM
-	llm = OpenAI(temperature=0.7)
-	
-	# Set up the Streamlit app
-	st.title("GPT-Powered Chatbot")
-	
-	# Get user input
-	user_input = st.text_input("Enter your prompt:")
-	
-	# Generate a response using the LLM
-	if user_input:
-	    response = llm(user_input)
-	    st.write(response)
-
+if selecteds == 6:
+	st.header("ythe chatbot key is in working")
 
 
 
 
 #Python Tab Section
-if selecteds == 2:
+if selecteds == 1:
     with st.sidebar:
         selected = sac.menu([
             sac.MenuItem('Introduction', icon='house-fill'),
