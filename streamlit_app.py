@@ -116,8 +116,7 @@ if selecteds == 1:
         st.write("- **TensorFlow and PyTorch:** For deep learning.")
 
 
-
-	if selected == 3:
+    if selected == 3:
 		st.markdown("""
 		<div style="border: 1px solid #b8b8b8; border-radius: 10px; padding: 10px;">
 		<h4>First Python Program to Learn Python Programming</h4>
