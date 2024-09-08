@@ -125,6 +125,10 @@ if selecteds == 1:
         st.write("- **TensorFlow and PyTorch:** For deep learning.")
 
 
+
+
+
+	
     if selected == 4:
         st.header("Python Data Type")
         st.write("Python data types offers, enabling you to manipulate and manage data with precision and flexibility. Additionally, we’ll delve into the dynamic world of data conversion with casting, and then move on to explore the versatile collections Python provides, including lists, tuples, sets, dictionaries, and arrays.")
